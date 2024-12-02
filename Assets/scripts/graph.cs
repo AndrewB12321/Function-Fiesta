@@ -30,7 +30,7 @@ public class graph : MonoBehaviour
             Vector3 point = new Vector3();
             point.x = xVal;
             point.y = (xSquaredTerm * Mathf.Pow(xVal, 2)) + (xVal * xTerm) + constant;
-            point.z = -1;
+            point.z = 0;
             points[i + 50] = point;
             xVal += 0.1f;
             Console.WriteLine(xVal);
@@ -39,6 +39,5 @@ public class graph : MonoBehaviour
         Mesh mesh = new Mesh();
         lr.BakeMesh(mesh, true);
         meshCol.sharedMesh = mesh;
-   
     }
 }
