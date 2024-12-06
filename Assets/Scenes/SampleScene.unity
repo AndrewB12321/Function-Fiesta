@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 100
-  scale: 2
+  scale: 1
   lineObject: {fileID: 7058416648529747133, guid: 046ea0b15b5b13f47a3092ecb2d741a1, type: 3}
 --- !u!1 &352561184
 GameObject:
