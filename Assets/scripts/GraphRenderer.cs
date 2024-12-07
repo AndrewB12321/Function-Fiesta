@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GraphRenderer : MonoBehaviour
 {
     public GameObject linePrefab;
-
+    private List<GameObject> lines = new List<GameObject>();
+    bool gameOver;
 
 
     public enum functionType
@@ -15,7 +17,6 @@ public class GraphRenderer : MonoBehaviour
         log
     }
 
-    bool gameOver;
 
 
 
@@ -38,19 +39,22 @@ public class GraphRenderer : MonoBehaviour
             case functionType.linear:
                 GameObject newLin = Instantiate(linePrefab);
                 newLin.AddComponent<LinearEQ>();
-                Debug.Log("This function was called!");
+                lines.Add(newLin);
                 break;
             case functionType.quadratic:
                 GameObject newQuad = Instantiate(linePrefab);
                 newQuad.AddComponent<QuadraticEQ>();
+                lines.Add(newQuad);
                 break;
             case functionType.exponential:
                 GameObject newExp = Instantiate(linePrefab);
                 newExp.AddComponent<ExponentialEQ>();
+                lines.Add(newExp);
                 break;
             case functionType.log:
                 GameObject newLog = Instantiate(linePrefab);
                 newLog.AddComponent<LogEQ>();
+                lines.Add(newLog);
                 break;
         }
     }
@@ -73,6 +77,15 @@ public class GraphRenderer : MonoBehaviour
     public void addLog()
     {
         selectFunction(functionType.log);
+    }
+
+    public void clearFunctions()
+    {
+        foreach (var line in lines)
+        {
+            Destroy(line);
+        }
+        lines.Clear();
     }
 
 }

@@ -42,7 +42,7 @@ public class LinearEQ : Function
     }
     // all the other graphs need to make sure there are the correct points
     // but a line only needs 2 points so it only has 2 points
-    public override void drawGraph(Vector3[] linePoints, Vector2[] colPoints)
+    public override void drawGraph()
     {
         lr.SetPositions(linePoints);
         edgeCol.points = colPoints;

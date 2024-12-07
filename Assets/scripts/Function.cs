@@ -33,7 +33,7 @@ public class Function : MonoBehaviour
     {
         numPoints = Mathf.Abs(x1 - x2) * pointsPerUnit;
         updateGraph();
-        drawGraph(linePoints, colPoints);
+        drawGraph();
 
     }
     // function to update the points, overridden in base classes
@@ -55,7 +55,7 @@ public class Function : MonoBehaviour
         lr.positionCount = numPoints;
         lr.widthMultiplier = 0.1f;
     }
-    public virtual void drawGraph(Vector3[] linePoints, Vector2[] colPoints)
+    public virtual void drawGraph()
     {
         if (linePoints.Length != numPoints)
             throw new ArgumentException("Length of linePoints != numPoints: linePoints = " + linePoints.Length + ", numPoints = " + numPoints);
