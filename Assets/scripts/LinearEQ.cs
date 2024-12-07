@@ -22,7 +22,7 @@ public class LinearEQ : Function
     public override void Update()
     {
         updateGraph();
-        drawGraph(linePoints, colPoints);
+        drawGraph();
     }
 
 
