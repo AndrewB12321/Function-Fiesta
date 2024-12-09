@@ -25,7 +25,6 @@ public class LogEQ : Function
 
         for (int i = lowerVal; i < higherval; i++)
         {
-
             float current_xValue = i;
             for (int j = 0; j < pointsPerUnit; j++)
             {
@@ -41,5 +40,35 @@ public class LogEQ : Function
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }
+    }
+
+    public override void updateEnteredValues()
+    {
+        if (x1_val.text.Length != 0 && x1_val.text != "-")
+            this.x1 = int.Parse(x1_val.text);
+
+        if (x2_val.text.Length != 0 && x2_val.text != "-")
+            this.x2 = int.Parse(x2_val.text);
+
+        if (this.x1 < 0)
+        {
+            this.x1 = 0;
+            x1_val.text = "0";
+        } 
+
+        if (this.x2 < 0)
+        {
+            this.x2 = 0;
+            x2_val.text = "0";
+        }
+
+        if (a_val.text.Length != 0 && a_val.text != "-")
+            this.a = float.Parse(a_val.text);
+
+        if (b_val.text.Length != 0 && b_val.text != "-")
+            this.b = float.Parse(b_val.text);
+
+        if (c_val != null && c_val.text.Length != 0 && c_val.text != "-")
+            this.c = float.Parse(c_val.text);
     }
 }

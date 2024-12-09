@@ -77,10 +77,10 @@ public class Function : MonoBehaviour
     }
 
 <<<<<<< HEAD
-    public void updateEnteredValues(int x1, int x2, float a, float b, float c)
-=======
-    public void updateEnteredValues()
->>>>>>> origin/williamfondoulis
+
+
+    public virtual void updateEnteredValues()
+
     {
         if (x1_val.text.Length != 0 && x1_val.text != "-")
             this.x1 = int.Parse(x1_val.text);
