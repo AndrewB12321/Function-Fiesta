@@ -66,7 +66,7 @@ public class Function : MonoBehaviour
         edgeCol.points = colPoints;
     }
 
-    public void updateEnteredValues(int x1, int x2, int a, int b, int c)
+    public void updateEnteredValues(int x1, int x2, float a, float b, float c)
     {
         this.x1 = x1;
         this.x2 = x2;
