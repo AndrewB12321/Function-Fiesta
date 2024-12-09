@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("LevelUnlocked", 0);
+        PlayerPrefs.SetInt("LevelUnlocked", 1);
         BackButton();
     }
 
