@@ -76,7 +76,7 @@ public class Function : MonoBehaviour
         edgeCol.points = colPoints;
     }
 
-    public void updateEnteredValues()
+    public virtual void updateEnteredValues()
     {
         if (x1_val.text.Length != 0 && x1_val.text != "-")
             this.x1 = int.Parse(x1_val.text);

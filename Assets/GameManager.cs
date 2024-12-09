@@ -9,6 +9,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         keys = GameObject.FindGameObjectsWithTag("Key");
-        doors = GameObject.FindGameObjectsWithTag("Doors");
+        doors = GameObject.FindGameObjectsWithTag("Door");
     }
 }
