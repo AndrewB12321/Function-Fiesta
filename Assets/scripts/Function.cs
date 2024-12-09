@@ -76,7 +76,7 @@ public class Function : MonoBehaviour
         edgeCol.points = colPoints;
     }
 
-<<<<<<< HEAD
+
 
 
     public virtual void updateEnteredValues()
