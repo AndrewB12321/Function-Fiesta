@@ -10,6 +10,7 @@ public class ButtonManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("LevelUnlocked", 1);
         BackButton();
     }
 
@@ -47,7 +48,7 @@ public class ButtonManager : MonoBehaviour
 
     public void LevelLoadButton(int level)
     {
-        if(SceneManager.GetSceneByBuildIndex(level) != null )
+        if(SceneManager.GetSceneByBuildIndex(level) != null && PlayerPrefs.GetInt("LevelUnlocked") >= level)
         {
             SceneManager.LoadScene(level);
         }
