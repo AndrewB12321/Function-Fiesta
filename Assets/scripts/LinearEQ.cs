@@ -6,25 +6,15 @@ using TMPro;
 
 public class LinearEQ : Function
 {
-    public TMP_InputField a_val;
-    public TMP_InputField b_val;
-    public TMP_InputField c_val;
-    public TMP_InputField x1_val;
-    public TMP_InputField x2_val;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
-        initializeGraph();
-        a_val = GetComponent<TMP_InputField>();
-        b_val = GetComponent<TMP_InputField>();
         base.Start();
     }
 
     // Update is called once per frame
     public override void Update()
     {
-        updateGraph();
         base.Update();
     }
 
@@ -53,13 +43,5 @@ public class LinearEQ : Function
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }
-    }
-
-    public override void ProccessInput()
-    {
-        string b_input = b_val.text;
-        // accepts integers, decimals with one decimal or integer/integer
-        a = stringToFloat(a_val.text);
-        b = stringToFloat(b_val.text);
     }
 }

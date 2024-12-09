@@ -50,25 +50,39 @@ public class GraphRenderer : MonoBehaviour
             case functionType.quadratic:
                 GameObject newQuad = Instantiate(linePrefab);
                 GameObject newQuadUI = AddEquation(quadraticPrefab);
-
                 newQuad.AddComponent<QuadraticEQ>();
+
+                newQuad.GetComponent<QuadraticEQ>().a_val = newQuadUI.GetComponent<UIInputFieldGetter>().a_val;
+                newQuad.GetComponent<QuadraticEQ>().b_val = newQuadUI.GetComponent<UIInputFieldGetter>().b_val;
+                newQuad.GetComponent<QuadraticEQ>().c_val = newQuadUI.GetComponent<UIInputFieldGetter>().c_val;
+                newQuad.GetComponent<QuadraticEQ>().x1_val = newQuadUI.GetComponent<UIInputFieldGetter>().x1_val;
+                newQuad.GetComponent<QuadraticEQ>().x2_val = newQuadUI.GetComponent<UIInputFieldGetter>().x2_val;
+
                 lines.Add(newQuad);
                 break;
             case functionType.exponential:
                 GameObject newExp = Instantiate(linePrefab);
                 GameObject newExpUI = AddEquation(exponentialPrefab);
-
                 newExp.AddComponent<ExponentialEQ>();
+
+                newExp.GetComponent<ExponentialEQ>().a_val = newExpUI.GetComponent<UIInputFieldGetter>().a_val;
+                newExp.GetComponent<ExponentialEQ>().b_val = newExpUI.GetComponent<UIInputFieldGetter>().b_val;
+                newExp.GetComponent<ExponentialEQ>().x1_val = newExpUI.GetComponent<UIInputFieldGetter>().x1_val;
+                newExp.GetComponent<ExponentialEQ>().x2_val = newExpUI.GetComponent<UIInputFieldGetter>().x2_val;
+
                 lines.Add(newExp);
                 break;
             case functionType.log:
                 GameObject newLog = Instantiate(linePrefab);
                 GameObject newLogUI = AddEquation(logarithmicPrefab);
                 newLog.AddComponent<LogEQ>();
+
+                newLog.GetComponent<LogEQ>().a_val = newLogUI.GetComponent<UIInputFieldGetter>().a_val;
+                newLog.GetComponent<LogEQ>().b_val = newLogUI.GetComponent<UIInputFieldGetter>().b_val;
+                newLog.GetComponent<LogEQ>().x1_val = newLogUI.GetComponent<UIInputFieldGetter>().x1_val;
+                newLog.GetComponent<LogEQ>().x2_val = newLogUI.GetComponent<UIInputFieldGetter>().x2_val;
+
                 lines.Add(newLog);
-
-                
-
                 break;
         }
     }
