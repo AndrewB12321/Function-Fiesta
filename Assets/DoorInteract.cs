@@ -7,7 +7,13 @@ public class DoorInteract : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("LevelUnlocked", PlayerPrefs.GetInt("LevelUnlocked"));
+            int currentLevel = PlayerPrefs.GetInt("LevelUnlocked");
+
+            if (currentLevel == 0)
+                PlayerPrefs.SetInt("LevelUnlocked", 1);
+
+            PlayerPrefs.SetInt("LevelUnlocked", currentLevel + 1);
+            Debug.Log(PlayerPrefs.GetInt("LevelUnlocked"));
             SceneManager.LoadScene(0);
         }
     }
