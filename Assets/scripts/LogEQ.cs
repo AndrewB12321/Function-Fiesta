@@ -54,8 +54,7 @@ public class LogEQ : Function
         {
             this.x1 = 0;
             x1_val.text = "0";
-        }
-            
+        } 
 
         if (this.x2 < 0)
         {
