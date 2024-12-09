@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 246059241}
   - component: {fileID: 246059240}
   - component: {fileID: 246059242}
+  - component: {fileID: 246059243}
   m_Layer: 5
   m_Name: Equation Panel
   m_TagString: Untagged
@@ -472,6 +473,19 @@ MonoBehaviour:
   logarithmicPrefab: {fileID: 1798680202929424882, guid: 92a0eac3208098a4fa8578e19850b414, type: 3}
   quadraticPrefab: {fileID: 1075882312376240564, guid: 05ab6eebed6f51645addcdd0482c8127, type: 3}
   equationDisplayContainer: {fileID: 1627215533}
+--- !u!114 &246059243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246059238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e12152406ed797047bb462d7a08a35b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 8066173224214408254, guid: 7d0766714b0598b48aa8823de2ea46d2, type: 3}
 --- !u!1 &254607091
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 100
-  scale: 2
+  scale: 1
   lineObject: {fileID: 7058416648529747133, guid: 046ea0b15b5b13f47a3092ecb2d741a1, type: 3}
   numberObject: {fileID: 4651862004879206121, guid: 89a154a37a9948643905659b60d5270d, type: 3}
 --- !u!1 &314564656
@@ -1135,6 +1149,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 246059243}
+        m_TargetAssemblyTypeName: GraphRenderer, Assembly-CSharp
+        m_MethodName: addExponential
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &532730040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,6 +1504,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 246059243}
+        m_TargetAssemblyTypeName: GraphRenderer, Assembly-CSharp
+        m_MethodName: addQuadratic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &931471579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,7 +1719,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141291367}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1965,8 +2003,8 @@ GameObject:
   - component: {fileID: 1344336350}
   - component: {fileID: 1344336349}
   - component: {fileID: 1344336348}
-  - component: {fileID: 1344336347}
   - component: {fileID: 1344336351}
+  - component: {fileID: 1344336352}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1974,43 +2012,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &1344336347
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344336346}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!50 &1344336348
 Rigidbody2D:
   serializedVersion: 5
@@ -2082,8 +2083,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.99178314, g: 0, b: 1, a: 1}
+  m_Sprite: {fileID: 7432303264869866856, guid: a9b6b5315f0239d45987377f9f98189b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2102,8 +2103,8 @@ Transform:
   m_GameObject: {fileID: 1344336346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 1.20006, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.441, y: 1.359, z: 0}
+  m_LocalScale: {x: 2.8283103, y: 2.39717, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -2127,6 +2128,43 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   slopeCheckDistance: 1.5
+--- !u!70 &1344336352
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344336346}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.54, y: 1}
+  m_Direction: 0
 --- !u!1 &1429801698
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,6 +2469,18 @@ MonoBehaviour:
       - m_Target: {fileID: 246059242}
         m_TargetAssemblyTypeName: EquationUIManager, Assembly-CSharp
         m_MethodName: ShowLogarithmicEquation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 246059243}
+        m_TargetAssemblyTypeName: GraphRenderer, Assembly-CSharp
+        m_MethodName: addLog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3178,6 +3228,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 246059243}
+        m_TargetAssemblyTypeName: GraphRenderer, Assembly-CSharp
+        m_MethodName: clearFunctions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1660021841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3445,6 +3507,18 @@ MonoBehaviour:
       - m_Target: {fileID: 246059242}
         m_TargetAssemblyTypeName: EquationUIManager, Assembly-CSharp
         m_MethodName: ShowLinearEquation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 246059243}
+        m_TargetAssemblyTypeName: GraphRenderer, Assembly-CSharp
+        m_MethodName: addLinear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
