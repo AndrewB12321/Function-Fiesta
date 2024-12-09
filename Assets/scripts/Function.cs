@@ -4,10 +4,10 @@ using System;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using UnityEngine.Windows;
+using TMPro;
 
 public class Function : MonoBehaviour 
 {
-
     public int x1 = -5; // default values, will be changed by ui
     public int x2 = 5;
     public int scale = 2; // 2 unity units per 1 graph unit
@@ -21,6 +21,13 @@ public class Function : MonoBehaviour
     public Vector3[] linePoints;
     public Vector2[] colPoints;
 
+    [Header("InputFields")]
+    public TMP_InputField a_val;
+    public TMP_InputField b_val;
+    public TMP_InputField c_val;
+    public TMP_InputField x1_val;
+    public TMP_InputField x2_val;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public virtual void Start()
     {
@@ -31,15 +38,16 @@ public class Function : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        updateEnteredValues();
         numPoints = Mathf.Abs(x1 - x2) * pointsPerUnit;
         updateGraph();
         drawGraph();
-
     }
+
     // function to update the points, overridden in base classes
-   public virtual void updateGraph() {
+    public virtual void updateGraph() {
         Debug.Log("im calling the empty base function :((((");
-   }
+    }
 
     public void initializeGraph()
     {
@@ -55,6 +63,7 @@ public class Function : MonoBehaviour
         lr.positionCount = numPoints;
         lr.widthMultiplier = 0.1f;
     }
+
     public virtual void drawGraph()
     {
         if (linePoints.Length != numPoints)
@@ -62,37 +71,26 @@ public class Function : MonoBehaviour
         if (colPoints.Length != numPoints)
             throw new ArgumentException("Length of colPoints != numPoints: colPoints = " + colPoints.Length + ", numPoints = " + numPoints);
 
+        lr.positionCount = numPoints;
         lr.SetPositions(linePoints);
         edgeCol.points = colPoints;
     }
 
-    public void updateEnteredValues(int x1, int x2, int a, int b, int c)
+    public void updateEnteredValues()
     {
-        this.x1 = x1;
-        this.x2 = x2;
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+        if (x1_val.text.Length != 0 && x1_val.text != "-")
+            this.x1 = int.Parse(x1_val.text);
 
-    public virtual void ProccessInput()
-    {
+        if (x2_val.text.Length != 0 && x2_val.text != "-")
+            this.x2 = int.Parse(x2_val.text);
+            
+        if (a_val.text.Length != 0 && a_val.text != "-")
+            this.a = float.Parse(a_val.text);
 
-    }
+        if (b_val.text.Length != 0 && b_val.text != "-")
+            this.b = float.Parse(b_val.text);
 
-    public float stringToFloat(string text)
-    {
-        string reg = @"^\d+(\.\d+)?(\/\d+)?$";
-        if (Regex.IsMatch(text, reg))
-        {
-            return float.Parse(text);
-        }
-        else
-        {
-            Debug.Log("invalid input");
-            return 0;
-        }
+        if(c_val != null && c_val.text.Length != 0 && c_val.text != "-")
+            this.c = float.Parse(c_val.text);
     }
 }
-
-    
