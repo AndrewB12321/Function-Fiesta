@@ -1,62 +1,65 @@
 using JetBrains.Annotations;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LinearEQ : Function
-
 {
-    public InputField a_val;
-    public InputField b_val;
-    public InputField c_val;
+    public TMP_InputField a_val;
+    public TMP_InputField b_val;
+    public TMP_InputField c_val;
+    public TMP_InputField x1_val;
+    public TMP_InputField x2_val;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Start()
     {
-        numPoints = 2;
         initializeGraph();
-        a_val = GetComponent<InputField>();
-        b_val = GetComponent<InputField>();
+        a_val = GetComponent<TMP_InputField>();
+        b_val = GetComponent<TMP_InputField>();
+        base.Start();
     }
 
     // Update is called once per frame
     public override void Update()
     {
         updateGraph();
-        drawGraph();
+        base.Update();
     }
 
-
-    
     public override void updateGraph()
     {
-        float y1 = this.x1 * a + b;
-        float y2 = this.x2 * a + b;
-        Vector3 point1 = new Vector3(x1, y1, -1);
-        Vector3 point2 = new Vector3(x2, y2, -1);
-        Vector3[] linePoints = { point1, point2 };
-        Vector2[] colPoints = { point1, point2 };
-        this.linePoints = linePoints;
-        this.colPoints = colPoints;
-        Debug.Log("its me!!! im calling the derived function!!!");
+        linePoints = new Vector3[numPoints];
+        colPoints = new Vector2[numPoints];
+        int lowerVal = x1 < x2 ? x1 : x2;
+        int higherVal = x1 > x2 ? x1 : x2;
+        List<float> xValues = new List<float>();
 
-    }
-    // all the other graphs need to make sure there are the correct points
-    // but a line only needs 2 points so it only has 2 points
-    public override void drawGraph()
-    {
-        lr.SetPositions(linePoints);
-        edgeCol.points = colPoints;
+        for (int i = lowerVal; i < higherVal; i++)
+        {
+            float current_xValue = i;
+            for (int j = 0; j < pointsPerUnit; j++)
+            {
+                xValues.Add(current_xValue);
+                current_xValue += 1.0f / pointsPerUnit;
+            }
+        }
+
+        for (int i = 0; i < numPoints; i++)
+        {
+            float xVal = xValues[i];
+            float yVal = xVal * a + b;
+            linePoints[i] = new Vector3(xVal, yVal, 0);
+            colPoints[i] = new Vector2(xVal, yVal);
+        }
     }
 
     public override void ProccessInput()
     {
-
         string b_input = b_val.text;
         // accepts integers, decimals with one decimal or integer/integer
         a = stringToFloat(a_val.text);
         b = stringToFloat(b_val.text);
-
-
     }
-
 }

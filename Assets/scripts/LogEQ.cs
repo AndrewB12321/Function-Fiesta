@@ -14,6 +14,7 @@ public class LogEQ : Function
     {
         base.Update();
     }
+
     public override void updateGraph()
     {
         linePoints = new Vector3[numPoints];
@@ -40,7 +41,5 @@ public class LogEQ : Function
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }
-
     }
-
 }

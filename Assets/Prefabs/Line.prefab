@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5465413465835143469}
   - component: {fileID: 8992185289978747803}
   - component: {fileID: 7499355177936113419}
-  m_Layer: 0
-  m_Name: graph
+  m_Layer: 6
+  m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8066173224214408254}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.848499, y: 7.7824183, z: -0.15804824}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
