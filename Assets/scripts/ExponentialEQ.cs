@@ -37,7 +37,7 @@ public class ExponentialEQ : Function
         for (int i = 0; i < numPoints; i++)
         {
             float xVal = xValues[i];
-            float yVal = a * Mathf.Pow((float)System.Math.E, xVal*b) + c;
+            float yVal = a * Mathf.Pow((float)System.Math.E, xVal - b) + c;
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }
