@@ -47,7 +47,7 @@ public class ButtonManager : MonoBehaviour
 
     public void LevelLoadButton(int level)
     {
-        Debug.Log(PlayerPrefs.GetInt("LevelUnlocked"));
+        Debug.Log("LoadLevel Called!");
         if (SceneManager.GetSceneByBuildIndex(level) != null && PlayerPrefs.GetInt("LevelUnlocked") >= level)
         {
             Debug.Log("Level button: " + level + " clicked!");
