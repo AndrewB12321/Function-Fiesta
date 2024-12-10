@@ -69,6 +69,8 @@ public class LogEQ : Function
         if (b_val.text.Length != 0 && b_val.text != "-")
             this.b = float.Parse(b_val.text);
 
+        Debug.Log("C_val is: " + c_val + ". C_val.text is: " + c_val.text);
+
         if (c_val.text.Length != 0 && c_val.text != "-")
             Debug.Log("is this getting called?");
             this.c = float.Parse(c_val.text);

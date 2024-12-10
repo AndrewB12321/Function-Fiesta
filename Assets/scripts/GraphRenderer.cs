@@ -79,6 +79,7 @@ public class GraphRenderer : MonoBehaviour
 
                 newLog.GetComponent<LogEQ>().a_val = newLogUI.GetComponent<UIInputFieldGetter>().a_val;
                 newLog.GetComponent<LogEQ>().b_val = newLogUI.GetComponent<UIInputFieldGetter>().b_val;
+                newLog.GetComponent<LogEQ>().c_val = newLogUI.GetComponent<UIInputFieldGetter>().c_val;
                 newLog.GetComponent<LogEQ>().x1_val = newLogUI.GetComponent<UIInputFieldGetter>().x1_val;
                 newLog.GetComponent<LogEQ>().x2_val = newLogUI.GetComponent<UIInputFieldGetter>().x2_val;
 
