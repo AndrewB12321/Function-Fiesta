@@ -511,6 +511,12 @@ MonoBehaviour:
   settingsMenu: {fileID: 1550292959}
   levelSelectMenu: {fileID: 350356063}
   creditsScreen: {fileID: 503643865}
+  level1: {fileID: 240036285}
+  level2: {fileID: 1665300530}
+  level3: {fileID: 378315190}
+  level4: {fileID: 1344707859}
+  level5: {fileID: 187069577}
+  level6: {fileID: 755114211}
 --- !u!1 &240036285
 GameObject:
   m_ObjectHideFlags: 0
