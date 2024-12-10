@@ -13,7 +13,6 @@ public class LogEQ : Function
     public override void Update()
     {
         base.Update();
-        Debug.Log(c);
     }
 
     public override void updateGraph()
