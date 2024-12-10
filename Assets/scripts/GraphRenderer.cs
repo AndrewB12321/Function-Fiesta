@@ -67,6 +67,7 @@ public class GraphRenderer : MonoBehaviour
 
                 newExp.GetComponent<ExponentialEQ>().a_val = newExpUI.GetComponent<UIInputFieldGetter>().a_val;
                 newExp.GetComponent<ExponentialEQ>().b_val = newExpUI.GetComponent<UIInputFieldGetter>().b_val;
+                newExp.GetComponent<ExponentialEQ>().c_val = newExpUI.GetComponent<UIInputFieldGetter>().c_val;
                 newExp.GetComponent<ExponentialEQ>().x1_val = newExpUI.GetComponent<UIInputFieldGetter>().x1_val;
                 newExp.GetComponent<ExponentialEQ>().x2_val = newExpUI.GetComponent<UIInputFieldGetter>().x2_val;
 
