@@ -78,7 +78,6 @@ public class Function : MonoBehaviour
 
 
 
-
     public virtual void updateEnteredValues()
 
     {

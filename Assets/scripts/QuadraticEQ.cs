@@ -15,6 +15,7 @@ public class QuadraticEQ : Function
     public override void Update()
     {
         base.Update();
+        Debug.Log(c);
     }
 
     public override void updateGraph()
@@ -39,7 +40,8 @@ public class QuadraticEQ : Function
         for(int i = 0; i < numPoints; i++)
         {
             float xVal = xValues[i];
-            float yVal = (a * Mathf.Pow(xVal, 2)) + (b * xVal) + c;
+            float hVal = xVal - b;
+            float yVal = (a * (hVal * hVal)) + c;
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }

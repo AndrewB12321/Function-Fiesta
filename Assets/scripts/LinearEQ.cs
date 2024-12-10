@@ -39,7 +39,7 @@ public class LinearEQ : Function
         for (int i = 0; i < numPoints; i++)
         {
             float xVal = xValues[i];
-            float yVal = xVal * a + b;
+            float yVal =  a * xVal + b;
             linePoints[i] = new Vector3(xVal, yVal, 0);
             colPoints[i] = new Vector2(xVal, yVal);
         }

@@ -13,6 +13,7 @@ public class LogEQ : Function
     public override void Update()
     {
         base.Update();
+        Debug.Log(c);
     }
 
     public override void updateGraph()
@@ -68,7 +69,8 @@ public class LogEQ : Function
         if (b_val.text.Length != 0 && b_val.text != "-")
             this.b = float.Parse(b_val.text);
 
-        if (c_val != null && c_val.text.Length != 0 && c_val.text != "-")
+        if (c_val.text.Length != 0 && c_val.text != "-")
+            Debug.Log("is this getting called?");
             this.c = float.Parse(c_val.text);
     }
 }
